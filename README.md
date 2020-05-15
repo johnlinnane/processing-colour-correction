@@ -1,4 +1,11 @@
-# Colour Correction and Dynamic Compositing with Processing
+# Colour Correction and Dynamic Compositing
+
+Colour Correction and Dynamic Compositing using the Processing language. This project was refactored for UCC's Masters in Interactive Media.
+
+## Langauge Used
+
+Processing (Java)
+
 
 ## Description
 
@@ -21,18 +28,10 @@ An opposing function was also created to switch back from Lɑβ to RGB.
 
 The standard deviations of the Lɑβ values of each background pixel was obtained. A transform was then used to apply these values to the Lɑβ values of the foreground image. These Lɑβ transforms are better suited to matching high and low values, and are not as effective at matching mid-tones. Mean matching across different zones can be applied. While colour transfer can often produce believable composites, some instance might require more complicated readjustments, such as relighting.[4] There also other aspects beyond colour matching that need to be considered, such as achieving an appropriate grain, or the clipping of saturated colour data which cannot be retrieved.[1]
 
-Multiple algorithms exist for colour transfer. Two examples of this are those of Reinhard, and Wang. The difference between these can be seen in the picture below:
 
-[image]
+### Match white point and black point
 
-A comparison of Reinhard and Wang’s colour transfer algorithms. [5]
-
-Match white point and black point
-
-The black point of an image is the point that has a value of 2% of a reflective black surface, and the white point has a value of 90% of a reflective black surface.[5] Headroom is allowed at either end to allow for anomalies such as specular highlights. These points are used to match the dynamic range of two composited images, such as in the following illustration:
-
-Matching white and black points [5]
- 
+The black point of an image is the point that has a value of 2% of a reflective black surface, and the white point has a value of 90% of a reflective black surface.[5] Headroom is allowed at either end to allow for anomalies such as specular highlights. These points are used to match the dynamic range of two composited images.
 
 These principles were used in the processing sketch, whereby the minimum and maximum brightness values of the background image are being used as a scale on which to map the minimum and maximum values of the foreground image. This technique can also been seen in image editing software such as photoshop:
 
