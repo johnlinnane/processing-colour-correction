@@ -2,7 +2,7 @@
 
 Colour Correction and Dynamic Compositing using the Processing language. This project was refactored for UCC's Masters in Interactive Media.
 
-## Langauge Used
+## Langauge
 
 Processing (Java)
 
