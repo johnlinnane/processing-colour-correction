@@ -1,24 +1,18 @@
-# processing-colour-correction
-Colour Correction with Processing
+# Colour Correction and Dynamic Compositing with Processing
 
-
-Dynamic Compositing
-John Linnane 
-CS6114 
-118227214 
-MScIM 2018/2019
+## Description
 
 For this processing assignment I created a sketch for the Processing programming language which dynamically composited video content on to a variety of different backgrounds. Both natural and synthetic content can be selected for the composited foreground. Both foreground videos incorporate a chroma key (ie. black or blue) which can be removed using a colour similarity function. The dynamic range of the foreground was then matched to the background using a scaling function on brightness values. Luminance values were then utilised to perform a colour transfer using an algorithm to convert RGB (Red, Green, Blue) values to Lɑβ (Luminance, Alpha, Beta) values. A basic colour grade can then be applied using the tint() function.
 
-Composite
+### Composite
 
 For the overlaid content I used the chromakey() function to loop through the pixel array of the video and remove the key colour, in these cases green or blue. A variable for colour closeness is then created and colours are assessed as to how close to the key colour the individual pixels of the overlaid video are in the 3D colour space, using the dist() function. The ‘close colour distance’ value can vary due to how chroma key captured is rarely a single colour. Due to lighting and other environmental conditions, a green screen can be captured in hundreds of different colours. Reinhard describes the difficulties in compositing synthetic overlaid content with natural backgrounds, in particular matching the position of the light source. He also emphasises the importance of keeping computations as simple as possible, due to the high computational cost of presenting video content, especially at higher frame rates. He recommends combining chromatic adjustments processes within the steps for compositing, to limit pixel data transfer.[2]
 
-Dynamic Range
+### Dynamic Range
  
 In order to match the dynamic range of the foreground to that of the background. A function was created whereby two arrays are created containing the brightness value of every pixel for both the foreground and the background. The max and min of both of these arrays is then obtained using the max() and min() function. The map() function was then used to scale the max and min brightness values of the foreground to that of the background.
 
-Colour Transfer
+### Colour Transfer
 
 For the colour transfer a function was created to convert RGB values into Lɑβ values using the following formula:
 Colour transfer function.
@@ -44,15 +38,15 @@ These principles were used in the processing sketch, whereby the minimum and max
 
 Adjusting white and black points in photoshop. [https://digital-photography-school.com/how-to-use-lab-color-in-photoshop-to-add-punch-to-your-images]
 
-Colour Grading
+### Colour Grading
 
 For the colour grade I used the tint() function to apply a tint to the foreground image. Different instances of the function were implemented for red, green and blue. This can be activated from the User Interface through the R, G and B buttons on the computer keyboard.
 
-User Interface
+### User Interface
 
 For the user interface, the viewer can toggle the dynamic range and colour transfer functions on and off. The brightness value of the dynamic range can be adjusted using the left and right arrow keys, as can the amount of colour transfer, using the up and down arrow keys. The ‘Z’ key is used to cycle through an array of different background images, this illustrates how the foreground content is altered to conform to differing background content. Finally, there are options for applying a tinted grade to the foreground image, using red, green and blue filters.
  
-References
+### References
 
 [1] François Pitié, Anil C. Kokaram, Rozenn Dahyot, Automated colour grading using colour distribution transfer, Computer Vision and Image Understanding, Volume 107, Issues 1–2, July– August 2007, Pages 123-137, ISSN 1077-3142, http://dx.doi.org/10.1016/j.cviu.2006.11.011.
 
